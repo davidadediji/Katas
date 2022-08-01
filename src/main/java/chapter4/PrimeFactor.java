@@ -1,19 +1,18 @@
 package chapter4;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class PrimeFactor {
     public Stack<Integer> getPrimeFactor(int number) {
         Stack<Integer> primeFactors = new Stack<>();
-        if(number == 2){
-            primeFactors.push(number);
-        }
-        if(number == 3){
-            primeFactors.push(number);
-        }
-        if(number == 4){
-            primeFactors.push(2);
-            primeFactors.push(2);
+        int[] factor = {1, 2, 3, 5};
+
+        for (int value: factor){
+            if(number % value == 0){
+                primeFactors.push(value);
+            }
         }
         return primeFactors;
     }
