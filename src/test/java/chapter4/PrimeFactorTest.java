@@ -72,4 +72,15 @@ public class PrimeFactorTest {
         actualFactors.push(3);
         assertEquals(actualFactors, expectedFactors);
     }
+
+    @Test
+    void shouldReturnTwelve() {
+        PrimeFactor primeFactor = new PrimeFactor();
+        Stack<Integer> expectedFactors = primeFactor.getPrimeFactor(12);
+        Stack<Integer> actualFactors = new Stack<>();
+        actualFactors.push(2);
+        actualFactors.push(2);
+        actualFactors.push(3);
+        assertEquals(actualFactors, expectedFactors);
+    }
 }
