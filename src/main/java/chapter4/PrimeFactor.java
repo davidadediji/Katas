@@ -9,16 +9,12 @@ public class PrimeFactor {
         Stack<Integer> primeFactors = new Stack<>();
         int[] factor = {2, 3, 5};
 
-        for (int i = 2; i < number; i++) {
-            if(number % i == 0 && number % 1 == 0){
-                    primeFactors.push(i);
+            for (int value: factor){
+                while(number % value == 0){
+                    primeFactors.push(value);
+                    number = number / value;
                 }
-//            for (int value: factor){
-//                if(number % value == 0){
-//                    primeFactors.push(value);
-//                }
-//            }
-        }
+            }
 
         return primeFactors;
     }

@@ -49,7 +49,6 @@ public class PrimeFactorTest {
         Stack<Integer> expectedFactors = primeFactor.getPrimeFactor(5);
 
         Stack<Integer> actualFactors = new Stack<>();
-        actualFactors.push(1);
         actualFactors.push(5);
         assertEquals(actualFactors, expectedFactors);
     }
@@ -60,6 +59,16 @@ public class PrimeFactorTest {
         Stack<Integer> expectedFactors = primeFactor.getPrimeFactor(6);
         Stack<Integer> actualFactors = new Stack<>();
         actualFactors.push(2);
+        actualFactors.push(3);
+        assertEquals(actualFactors, expectedFactors);
+    }
+
+    @Test
+    void shouldReturnNine() {
+        PrimeFactor primeFactor = new PrimeFactor();
+        Stack<Integer> expectedFactors = primeFactor.getPrimeFactor(9);
+        Stack<Integer> actualFactors = new Stack<>();
+        actualFactors.push(3);
         actualFactors.push(3);
         assertEquals(actualFactors, expectedFactors);
     }
