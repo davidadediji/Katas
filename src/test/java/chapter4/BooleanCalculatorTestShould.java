@@ -1,5 +1,6 @@
 package chapter4;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -25,6 +26,7 @@ public class BooleanCalculatorTestShould {
     }
 
     @Test
+    @DisplayName("value should be true and false -> ")
     void haveValueTrueAndFalse(){
         BooleanCalculator booleanCalculator = new BooleanCalculator();
         boolean expectedBoolean = BooleanCalculator.getBoolean("TRUE AND FALSE");
