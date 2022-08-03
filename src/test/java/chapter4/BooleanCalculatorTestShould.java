@@ -30,4 +30,53 @@ public class BooleanCalculatorTestShould {
         boolean expectedBoolean = BooleanCalculator.getBoolean("TRUE AND FALSE");
         assertEquals(false, expectedBoolean);
     }
+
+    @Test
+    void haveValueTrueAndTrue(){
+        BooleanCalculator booleanCalculator = new BooleanCalculator();
+        boolean expectedBoolean = BooleanCalculator.getBoolean("TRUE AND TRUE");
+        assertEquals(true, expectedBoolean);
+    }
+
+    @Test
+    void haveValueTrueOrFalse(){
+        BooleanCalculator booleanCalculator = new BooleanCalculator();
+        boolean expectedBoolean = BooleanCalculator.getBoolean("TRUE OR FALSE");
+        assertEquals(true, expectedBoolean);
+    }
+
+    @Test
+    void haveValueFalseOrFalse(){
+        BooleanCalculator booleanCalculator = new BooleanCalculator();
+        boolean expectedBoolean = BooleanCalculator.getBoolean("FALSE OR FALSE");
+        assertEquals(false, expectedBoolean);
+    }
+
+    @Test
+    void haveOrAndValue(){
+        BooleanCalculator booleanCalculator = new BooleanCalculator();
+        boolean expectedBoolean = BooleanCalculator.getBoolean("TRUE OR TRUE OR TRUE AND FALSE");
+        assertEquals(true, expectedBoolean);
+    }
+
+    @Test
+    void haveOrAndNotValue(){
+        BooleanCalculator booleanCalculator = new BooleanCalculator();
+        boolean expectedBoolean = BooleanCalculator.getBoolean("TRUE OR FALSE AND NOT FALSE");
+        assertEquals(true, expectedBoolean);
+    }
+
+    @Test
+    void haveOrAndParenthesesValue(){
+        BooleanCalculator booleanCalculator = new BooleanCalculator();
+        boolean expectedBoolean = BooleanCalculator.getBoolean( "(TRUE OR TRUE OR TRUE) AND FALSE");
+        assertEquals(false, expectedBoolean);
+    }
+
+    @Test
+    void haveOrAndNotParenthesesValue(){
+        BooleanCalculator booleanCalculator = new BooleanCalculator();
+        boolean expectedBoolean = BooleanCalculator.getBoolean( "NOT (TRUE AND TRUE)");
+        assertEquals(false, expectedBoolean);
+    }
 }
